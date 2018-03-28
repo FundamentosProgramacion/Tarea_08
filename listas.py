@@ -14,19 +14,27 @@ def sumarAcumulado(lista):
 def recortarLista(lista):
     nuevaLista=[]
     for k in range(1,len(lista)-1):
+
         nuevaLista.append(lista[k])
         print(nuevaLista)
 
 
 
 
-def estanOrdenador():
+def estanOrdenador(lista):
+    for k in range(0, len(lista) - 1):
+        if lista[k] < lista[k + 1]:
+            x = True
+            continue
+        else:
+            x = False
+        print(x)
+        break
 
-    pass
+
+def sonAnagramas(a,b):
 
 
-def sonAnagramas():
-    pass
 
 
 
@@ -46,9 +54,12 @@ def borrarDuplicados():
 
 
 def main():
-    lista=[1,2,3]
+    "lista=[1,2,3]
     #sumarAcumulado(lista)
+    #recortarLista(lista)
 
-    recortarLista(lista)
+
+    #sonAnagramas("AMOR","ROMA")
+    sonAnagramas(list[""])
 
 main()
