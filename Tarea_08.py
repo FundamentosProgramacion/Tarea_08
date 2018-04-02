@@ -7,7 +7,7 @@ lista1 = [1,2,3,4,5]
 lista2 =[1,2,2,3,4,3,5,6,6,7,1,3,4,8,3,4,6,3,9]
 lista3 = []
 lista4 = [1]
-
+lista = [1,2,3,1,4,2]
 #Palabras usadas en la función de los anagramas:
 anagrama1 = 'hola'
 anagrama2 = "amor"
@@ -33,14 +33,13 @@ def recortarLista(lista):
 def estanOrdenados(lista):          #compara paquetes de 2 numeros en la lista a la vez, si la lista es completamente
     contador1 = 0
     contador2 = 1
-    valor = True
     for numero in range(len(lista)-2):
          if lista[contador2] > lista[contador1]:
             contador1 += 1
             contador2 += 1
          else:
-            valor = False
-    return valor
+            return False
+    return True
 
 def sonAnagramas(palabra1, palabra2):           #recibe dos cadenas, las diviede y sortea, al final las compara y si la lista es exactamente igual, regresa True, en otro caso False
 
@@ -66,12 +65,26 @@ def hayDuplicados(lista):
 
 def borrarDuplicados(lista):
     listaDuplicados = []            #lista generada para tener los indices de los valores repetidos
-
+    '''
     for numero in lista:
         if numero not in listaDuplicados:
             listaDuplicados.append(numero)
     return listaDuplicados
+    '''
+    for x in range(len(lista)):
+        lista = list(lista)
+        for y in range(len(lista)):
+            if x != y:
+                if lista[x] == lista[y]:
+                    listaDuplicados.append(x)
+    listaDuplicados.reverse()
+    for numero in range((len(listaDuplicados))//2):
+        listaDuplicados.remove(numero)
 
+    for valor in listaDuplicados:
+        lista.pop(valor)
+
+    return lista
 
 
 def main():
@@ -92,6 +105,7 @@ def main():
     print('La lista ', lista2, ' regresa ', estanOrdenados(lista2))
     print('La lista ', lista3, ' regresa ', estanOrdenados(lista3))
     print('La lista ', lista4, ' regresa ', estanOrdenados(lista4))
+    print('La lista ', lista, ' regresa ', estanOrdenados(lista))
     print('\n')
     print('Ejercicio 4:')
     print('las palabras', anagrama1, 'y ', anagrama2, 'regresan ', sonAnagramas(anagrama1, anagrama2))
@@ -104,11 +118,8 @@ def main():
     print('La lista ', lista3, ' regresa ', hayDuplicados(lista3))
     print('La lista ', lista4, ' regresa ', hayDuplicados(lista4))
     print('\n')
-
     print('Ejercicio 6:')
+    print('La lista ', lista, ' regresa ', borrarDuplicados(lista))
     print('La lista ', lista1, ' regresa ', borrarDuplicados(lista1))
-    print('La lista ', lista2, ' regresa ', borrarDuplicados(lista2))
-    print('La lista ', lista3, ' regresa ', borrarDuplicados(lista3))
-    print('La lista ', lista4, ' regresa ', borrarDuplicados(lista4))
 
 main()
