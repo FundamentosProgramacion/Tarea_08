@@ -99,7 +99,7 @@ def main():
     print("\nEjercicio 4:")
     print("FRENANDO es Anagrama de FERNANDO?: ", sonAnagramas("fernando","frenando"))
     print("SILVA es Anagrama de SILVIA?: ", sonAnagramas("SILVA", "silvia"))
-    print("SI es Anagrama de SOL?: ", sonAnagramas("SI", "sOl"))
+    print("SI es Anagrama de SOL?: ", sonAnagramas("sI", "sOl"))
 
     print("\nEjercicio 5:")
     for dato in range(0, len(listaMagna), 3):
