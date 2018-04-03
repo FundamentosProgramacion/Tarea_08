@@ -18,7 +18,7 @@ def sumarAcumulado(lista):
     leng = len(lista)
     if leng > 1:
         primerdato = lista[0]
-        lista_acumulada.append(primerdato)
+        lista_acumulada.append(primerdato) #El algoritmo usa el dato de la lista y el que ya se sumo a la lista anterior
         for n in range(1, leng):
             dato = lista[n]
             dato2 = lista_acumulada[n-1]
@@ -27,7 +27,7 @@ def sumarAcumulado(lista):
         return lista_acumulada
     else:
         for n in range(leng):
-            lista_acumulada.append(lista[n])
+            lista_acumulada.append(lista[n]) #Si la lista cuenta con 1 dato o esta vacia, solo hay que agregarlo a la lista nueva
         return lista_acumulada
 
 def recortarLista(list):
@@ -46,30 +46,25 @@ def estanOrdenados(list):
         dato2 = list[n-1]
         if dato1 >= dato2:
             ordenados += 1
-    leng2 = ordenados + 1
+    leng2 = ordenados + 1 #leng2 comprueba que para todos los casos el dato era mayor o igual
     if leng == leng2:
         resultado = True
     return resultado
 
 def sonAnagrama(a, b):
-    sonAnagrama = False
+    sonAnagrama = "No son Anagrama"
     palabra1 = a.upper()
     palabra2 = b.upper()
     list_palabra1 = list(palabra1)
     list_palabra2 = list(palabra2)
-    for x in list_palabra1:
-        if x == ' ':
-            list_palabra1.remove(x)
-    for x in list_palabra2:
-        if x == ' ':
-            list_palabra2.remove(x)
-    list_palabra2.reverse()
+    list_palabra2.sort()
+    list_palabra1.sort()
     str1 = ""
     str2 = ""
     word1 = str1.join(list_palabra1)
     word2 = str2.join(list_palabra2)
     if word1 == word2:
-        sonAnagrama = True
+        sonAnagrama = "Son Anagrama"
     return sonAnagrama
 
 
@@ -119,20 +114,20 @@ def main():
           '\nPara la lista', lista2, 'el programa regresa', estanOrdenados(lista2),
           '\nPara la lista', lista3, 'el programa regresa', estanOrdenados(lista3))
     #Ejercicio4
-    palabra1 = 'RomA'
-    anagrama1 = 'aMor' #La funcion convierte a mayusculas por lo que el uso de estas no lo afecta
-    palabra2 = 'Anita lava la tina'
-    anagrama2 = 'Anit al aval atinA' #La funcion borra los espacios para frases
-    palabra3 = "linux"
-    anagrama3 = 'LUNIX'
-    palabra4 = ' '
-    anagrama4 = ' '
+    palabra1 = 'Ovoide'
+    anagrama1 = 'oviedo' #La funcion convierte a mayusculas por lo que el uso de estas no lo afecta
+    palabra2 = 'Riesgo'
+    anagrama2 = 'Sergio'
+    palabra3 = 'Mora'
+    anagrama3 = 'Roma'
+    palabra4 = 'Alvaro'
+    anagrama4 = 'Valor'
     print('\nEjercicio4: sonAnagramas', '\nPara', palabra1, 'y', anagrama1, 'el programa regresa', sonAnagrama(palabra1, anagrama1),
           '\nPara', palabra2, 'y', anagrama2, 'el programa regresa', sonAnagrama(palabra2, anagrama2),
           '\nPara', palabra3, 'y', anagrama3, 'el programa regresa', sonAnagrama(palabra3, anagrama3),
           '\nPara', palabra4, 'y', anagrama4, 'el programa regresa', sonAnagrama(palabra4, anagrama4))
     #Ejercicio 5
-    print('Ejercicio5: Hay Duplicados', '\nPara la lista', lista1, 'el programa regresa', hayDuplicados(lista1),
+    print('\nEjercicio5: Hay Duplicados', '\nPara la lista', lista1, 'el programa regresa', hayDuplicados(lista1),
           '\nPara la lista', lista2, 'el programa regresa', hayDuplicados(lista2),
           '\nPara la lista', lista3, 'el programa regresa', hayDuplicados(lista3))
     #Ejercicio 6
