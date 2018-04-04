@@ -1,7 +1,7 @@
 #Nataly Paulina Lopez Salazar
 #Diferentes ejercicios con listas
 
-def sumarAcumulado(lista):
+def sumarAcumulado(lista): #Esta funcion suma los valores de la lista sin juntar todos
     suma = 0
     acumulada = []
     for dato in lista:
@@ -10,12 +10,12 @@ def sumarAcumulado(lista):
     return acumulada
 
 
-def recortarLista(lista):
+def recortarLista(lista): # Esta funcion quita el primero y el ultimo numero
     lista2= lista[1:len(lista)-1]
     return lista2
 
 
-def estanOrdenados(lista):
+def estanOrdenados(lista): # Esta funcion checa que los valores esten ordenados
     ordenados = False
     for k in range(0, len(lista) - 1):
         if lista[k] <= lista[k + 1]:
@@ -27,7 +27,7 @@ def estanOrdenados(lista):
     return ordenados
 
 
-def sonAnagramas(lista2, lista3):
+def sonAnagramas(lista2, lista3): #Esta funcion verifica que las cadenas sean anagramas
     dato = lista2
     dato2 = lista3
 
@@ -41,7 +41,7 @@ def sonAnagramas(lista2, lista3):
 
 
 
-def hayDuplicados(lista):
+def hayDuplicados(lista): # Esta funcion detecta los duplicados
     list.sort(lista)
     for k in range(0,len(lista)-1):
         if lista[k]==lista[k+1]:
@@ -49,7 +49,7 @@ def hayDuplicados(lista):
     return False
 
 
-def borrarDuplicados(lista):
+def borrarDuplicados(lista): #Esta funcion quita los duplicados
     lista = list(set(lista))
 
     return lista
