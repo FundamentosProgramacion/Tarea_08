@@ -9,16 +9,6 @@ def sumarAcumulado(lista):
     return acumulada
 
 
-def quitarEspacios(lista):
-    sinEspacios = []
-
-    for dato in lista:  # dato pasa por cada cadena en la lista
-        if dato != " ":  # Evalua si en la lista hay un espacio
-            sinEspacios.append(dato)  # Agrega el dato a la lista
-
-    return sinEspacios
-
-
 def recortarLista(lista):
     recortar = lista[1:len(lista)-1]
     return recortar
