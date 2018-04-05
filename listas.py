@@ -6,7 +6,7 @@ def sumarAcumulado(lista):
     for dato in lista:
         i += dato
         nuevaLista.append(i)
-    print (nuevaLista)
+    return nuevaLista
 
     return nuevaLista
 
@@ -16,50 +16,44 @@ def recortarLista(lista):
     for k in range(1,len(lista)-1):
 
         nuevaLista.append(lista[k])
-        print(nuevaLista)
+    return nuevaLista
 
 
 
 
 def estanOrdenador(lista):
     for k in range(0, len(lista) - 1):
-        if lista[k] < lista[k + 1]:
-            x = True
-            continue
+        if lista[k] > lista[k + 1]:
+            return False
+    return True
+
+
+def hayDuplicados(lista):
+    for dato in lista:
+        vecesDat = lista.count(dato)
+        if vecesDat > 1:
+            return True
         else:
-            x = False
-        print(x)
-        break
-
-
-def sonAnagramas(a,b):
+            return False
 
 
 
 
-
-
-
-def hayDuplicados():
-
-
-    pass
-
-
-
-def borrarDuplicados():
-
-    pass
-
+def borrarDuplicados(lista):
+    for dato in lista:
+        veces = lista.count(dato)
+        if veces > 1:
+            lista.remove(dato)
+            return lista
+        else:
+            return lista
 
 
 def main():
-    "lista=[1,2,3]
-    #sumarAcumulado(lista)
-    #recortarLista(lista)
-
-
-    #sonAnagramas("AMOR","ROMA")
-    sonAnagramas(list[""])
-
+    lista=[1,2,3,4,5]
+    print("La lista",lista," regresa la lista acumulada ",sumarAcumulado(lista))
+    print("La lista original", lista," regresa", recortarLista(lista))
+    print(estanOrdenador(lista))
+    print(hayDuplicados(lista))
+    print("La lista ",lista,"regresa ",borrarDuplicados(lista))
 main()
