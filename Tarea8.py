@@ -27,6 +27,19 @@ def estanOrdenador(lista):
             return False
     return True
 
+def sonAnagramas(pal,pal1):
+     lista=list(pal.lower())
+     listaa=list(pal1.lower())
+     lista.sort ()
+     listaa.sort ()
+     if lista == listaa:
+         anagrama = True
+     else:
+         anagrama = False
+     return anagrama
+
+
+
 
 def hayDuplicados(lista):
     for dato in lista:
@@ -56,4 +69,7 @@ def main():
     print(estanOrdenador(lista))
     print(hayDuplicados(lista))
     print("La lista ",lista,"regresa ",borrarDuplicados(lista))
+    pal=
+    pal1=
+    print("las cadenas", pal,pal1,"regresan",sonAnagramas(pal,pal1))
 main()
