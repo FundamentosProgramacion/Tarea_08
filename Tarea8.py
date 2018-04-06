@@ -69,7 +69,7 @@ def main():
     print(estanOrdenador(lista))
     print(hayDuplicados(lista))
     print("La lista ",lista,"regresa ",borrarDuplicados(lista))
-    pal=
-    pal1=
+    pal="ROMA"
+    pal1="MORA"
     print("las cadenas", pal,pal1,"regresan",sonAnagramas(pal,pal1))
 main()
